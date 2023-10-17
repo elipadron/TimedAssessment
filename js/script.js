@@ -22,6 +22,12 @@
 //   loseGame();
 // }
 
+var startQuizButton = document.getElementById ('button');
+startQuizButton.addEventListener('click', function() {
+
+  
+}
+
 var questions = [
 {question: "Commonly used data types DO not include:",
 choices: ["strings", "booleans", "alerts", "numbers"],
@@ -79,3 +85,22 @@ question.choices.forEach(choices => {
 
 });
  questionContainer.style.display = "block";
+
+
+ function checkAnswer(selectedAnswer, correctAnswer, questionsIndex){
+  if (selectedAnswer === correctAnswer) {
+    console.log ("correct!");
+  }
+  else {
+    console.log ("incorrect!")}
+var nextQuestionIndex = questionsIndex +1;  //the next question after 
+ if (nextQuestionIndex < questions.length) {
+  displayQuestion(nextQuestionIndex);
+
+ }
+ else {
+  console.log("All done")
+ }
+  }
+  
+  //<button class="start-button">Start Quiz</button> 
