@@ -22,54 +22,55 @@
 //   loseGame();
 // }
 
-var startQuizButton = document.getElementById ('button');
-startQuizButton.addEventListener('click', function() {
-
-  
-}
-
-var questions = [
-{question: "Commonly used data types DO not include:",
-choices: ["strings", "booleans", "alerts", "numbers"],
-correctanswer: "booleans"
-},
-
-{question: "Commonly used data types DO not include:",
-choices: ["strings", "booleans", "alerts", "numbers"],
-correctanswer: "booleans"
-},
-
-{question: "Commonly used data types DO not include:",
-choices: ["strings", "booleans", "alerts", "numbers"],
-correctanswer: "booleans"
-},
-
-{question: "Commonly used data types DO not include:",
-choices: ["strings", "booleans", "alerts", "numbers"],
-correctanswer: "booleans"
-},
-
-{question: "Commonly used data types DO not include:",
-choices: ["strings", "booleans", "alerts", "numbers"],
-correctanswer: "booleans"
-},
-
-]
-
 var startButton = document.getElementById ("start-button");
 var questionContainer = document.getElementById ("question-container");
 var questionElement = document.getElementById ("questions");
 var choicesElement = document.getElementById ("choices");
+var resultElement = document.getElementById ("result");
 
 //event click so the quiz can start
-startButton.addEventListener ("click", startQuiz);
+
+var questions = [
+  {question: "Commonly used data types DO not include:",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  correctanswer: "booleans"
+  },
+  
+  {question: "The condition in an if/else statement is enclosed with _______.",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  correctanswer: "booleans"
+  },
+  
+  {question: "",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  correctanswer: "booleans"
+  },
+  
+  {question: "Commonly used data types DO not include:",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  correctanswer: "booleans"
+  },
+  
+  {question: "Commonly used data types DO not include:",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  correctanswer: "booleans"
+  },
+  
+  ]
+  startButton.addEventListener ("click", startQuiz);
+
 
 //hide the start button once the user clicks startquiz
 function startQuiz(){
   startButton.style.display = "none";
+  questionContainer.classList.remove("hidden");
+  displayQuestion(currentQuestionIndex);
 
-displayQuestion(0);
+
+
 } 
+
+
 //this displays the first question 
 var questions = questions [questionsIndex];
 questionsElement.textContent = question.question;
@@ -102,5 +103,27 @@ var nextQuestionIndex = questionsIndex +1;  //the next question after
   console.log("All done")
  }
   }
+
+
+var startQuizButton = document.getElementById ('button');
+var questionContainer = document.getElementById("quesstions-container");
+
+startQuizButton.addEventListener('click', function() {
+for (let i = 0; i < questions.length; i++){
+  var questionElement = document.createElement ('h2');
+  questionElement.textContent = question [i].question;
+  document.body.appendChild(questionElement);
+
+}
+
+});
+
+
+
+
+
+
+
   
-  //<button class="start-button">Start Quiz</button> 
+  //<button class="button">Start Quiz</button> 
+  // <a href="/timedassessment.html" class="button">Start Quiz</a>
